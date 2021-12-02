@@ -73,9 +73,7 @@ body {
   justify-self: center;
   font-size: 3rem;
   text-align: center;
-  background-image: linear-gradient(to right bottom, #55c57a, #7ed56f);
-  -webkit-background-clip: text;
-  color: transparent;
+  color: #55c57a;
   transition: all .2s;
   margin: 8rem 0; }
   @media only screen and (max-width: 50em) {
@@ -95,9 +93,7 @@ body {
   justify-self: center;
   margin-top: 8rem;
   font-size: 3rem;
-  background-image: linear-gradient(to right, #55c57a, #7ed56f);
-  -webkit-background-clip: text;
-  color: transparent;
+  color: #55c57a;
   transition: all .2s; }
   @media only screen and (max-width: 50em) {
     .second__title {
@@ -148,6 +144,10 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(3px);
   transition: all .1s; }
+  @media only screen and (max-width: 50em) {
+    .close-modal {
+      font-size: 2rem;
+      padding: .7rem 1.2rem; } }
   .close-modal:hover {
     transform: scale(1.1); }
 
@@ -195,6 +195,10 @@ body {
   grid-template-rows: repeat(2, min-content);
   justify-items: center;
   width: 16rem; }
+  @media only screen and (max-width: 37.5em) {
+    .logo-container {
+      width: 11rem;
+      transform: translateX(2rem, 0.5rem); } }
   .logo-container .logo-img {
     width: 17rem;
     height: 13rem;
@@ -202,7 +206,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    transform: translateY(0.5rem); }
+    transform: translateY(0, 0.5rem); }
     @media only screen and (max-width: 62.5em) {
       .logo-container .logo-img {
         width: 15rem;
@@ -214,7 +218,8 @@ body {
     @media only screen and (max-width: 37.5em) {
       .logo-container .logo-img {
         width: 10rem;
-        height: 10rem; } }
+        height: 10rem;
+        transform: translate(-3rem, 1rem); } }
   .logo-container .logo-text {
     font-family: 'Permanent Marker', cursive;
     font-size: 2rem;
@@ -225,7 +230,8 @@ body {
     transform: translateY(-0.5rem); }
     @media only screen and (max-width: 37.5em) {
       .logo-container .logo-text {
-        font-size: 1.5rem; } }
+        font-size: 1.5rem;
+        transform: translate(-2rem); } }
 
 #gallery__logo {
   text-decoration: none; }
@@ -238,6 +244,9 @@ body {
   border-radius: 3px;
   clip-path: polygon(0 0, 50% 30%, 100% 0, 100% 100%, 0 100%);
   font-size: 1rem; }
+  @media only screen and (max-width: 37.5em) {
+    .topButton {
+      top: 93vh; } }
   .topButton:link, .topButton:visited {
     text-decoration: none;
     color: white;
@@ -259,19 +268,18 @@ body {
       grid-column: full-start/ full-end; } }
   .about__main {
     display: grid;
-    grid-template-columns: 1fr; }
-    .about__main-atv--title {
-      font-size: 2.5rem;
-      transform: translateY(-4rem); }
-    .about__main-atv--item {
-      line-height: 2;
-      font-size: 1.9rem; }
-    .about__main-tractari--title {
-      font-size: 2.5rem;
-      transform: translateY(-4rem); }
-    .about__main-tractari--item {
-      line-height: 2;
-      font-size: 1.9rem; }
+    grid-template-columns: repeat(2, 1fr); }
+    @media only screen and (max-width: 50em) {
+      .about__main {
+        padding: 0 2rem;
+        margin-bottom: 2rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .about__main {
+        grid-template-columns: 1fr; } }
+    .about__main-primary {
+      margin-bottom: 2rem; }
+    .about__main-secondary {
+      margin-bottom: 2rem; }
 
 .footer {
   display: grid;
@@ -330,6 +338,9 @@ body {
       color: white;
       font-size: 2.8rem;
       transition: all .2s; }
+      @media only screen and (max-width: 50em) {
+        .gallery__top-link:link, .gallery__top-link:visited {
+          font-size: 2rem; } }
       .gallery__top-link:link:hover, .gallery__top-link:visited:hover {
         transform: scale(1.2);
         color: #55c57a; }
@@ -338,10 +349,19 @@ body {
     align-self: center;
     justify-self: end;
     transform: translateX(-4rem); }
+    @media only screen and (max-width: 50em) {
+      .gallery__top-contacts {
+        transform: translateX(-0.2rem); } }
     .gallery__top-contacts--title {
       font-size: 2.4rem; }
+      @media only screen and (max-width: 50em) {
+        .gallery__top-contacts--title {
+          font-size: 1.8rem; } }
     .gallery__top-contacts--item {
       font-size: 1.8rem; }
+      @media only screen and (max-width: 50em) {
+        .gallery__top-contacts--item {
+          font-size: 1.3rem; } }
 
 .gallery__main {
   display: grid;
@@ -354,6 +374,9 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 1rem;
   margin-bottom: 5rem; }
+  @media only screen and (max-width: 37.5em) {
+    .gallery {
+      grid-column: full-start/ full-end; } }
   .gallery__img-1 {
     background-image: url(/img/img-gallery-1.jpeg); }
   .gallery__img-2 {
@@ -563,7 +586,7 @@ body {
     .info__card-1--img {
       height: 100%;
       width: 100%;
-      background-image: linear-gradient(to right top, rgba(85, 197, 122, 0.5), rgba(126, 213, 111, 0.5)), url(/img/img-card-1.jpeg);
+      background-image: linear-gradient(to right top, rgba(85, 197, 122, 0.5), rgba(126, 213, 111, 0.5)), url(/img/img-gallery-18.jpeg);
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -719,6 +742,9 @@ body {
   background-repeat: no-repeat;
   z-index: 7;
   border-radius: .5rem; }
+  @media only screen and (max-width: 50em) {
+    .modal {
+      width: 98%; } }
 
 .oferta {
   display: grid;
@@ -731,9 +757,7 @@ body {
   .oferta__main {
     justify-self: center;
     font-size: 3rem;
-    background-image: linear-gradient(to right, #55c57a, #2998ff);
-    -webkit-background-clip: text;
-    color: transparent;
+    color: #55c57a;
     margin: 3rem 0; }
   .oferta__secondary {
     display: grid;
@@ -855,6 +879,9 @@ body {
   align-items: center;
   justify-items: center;
   margin: 8rem 0; }
+  @media only screen and (max-width: 50em) {
+    .testimonials__gallery {
+      grid-column: full-start/ full-end; } }
   .testimonials__gallery-title {
     color: white;
     font-size: 4rem; }
