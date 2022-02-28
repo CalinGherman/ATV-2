@@ -10,7 +10,7 @@ let imgLeft = document.querySelector('.img-left');
 let imgRight = document.querySelector('.img-right');
 let theIndex = 0;
 
-// console.log(galleryImg);
+
 
 let displayImg = function(number){
     modal.style.backgroundImage = `url(img/img-gallery-${number + 1}.jpeg)`
@@ -20,13 +20,20 @@ let displayImg = function(number){
     theIndex = number +1 ;
     return theIndex;
 }
-for(let i = 0; i<galleryImg.length; i++){
-  galleryImg[i].addEventListener('click', function(){
-      displayImg(i)
-      console.log(i);
+// for(let i = 0; i<galleryImg.length; i++){
+//   galleryImg[i].addEventListener('click', function(){
+//       displayImg(i)
+//   })
+// }
+galleryImg.forEach(function(img, i){
+img.addEventListener('click', function(){
+    displayImg(i);
+})
+})
 
-  })
-}
+
+
+
 
 imgRight.addEventListener('click', function(){
     if(theIndex < galleryImg.length){
@@ -54,3 +61,20 @@ overlay.addEventListener('click', function(){
     modal.classList.add('hidden');
     overlay.classList.add('hidden');
 })
+
+
+//Scrolling to Top
+
+
+const scrollBtn = document.querySelector('.topButton');
+const scrollingTo = document.querySelector('.scroll--to-top');
+
+scrollBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    scrollingTo.scrollIntoView({behavior: 'smooth'});
+})
+
+
+
+
+
